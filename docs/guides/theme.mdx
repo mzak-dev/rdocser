@@ -1,0 +1,51 @@
+---
+title: Theme and accessibility
+description: A reading experience that adapts to your project and your readers.
+group: Guides
+order: 13
+---
+
+# Theme and accessibility
+
+A few design tokens define the entire workspace. The same palette flows through the reader, graph, dialogs, and presentation controls.
+
+## Theme tokens
+
+Edit `theme.json` at the project root.
+
+```json
+{
+  "colors": {
+    "background": "#fafaf9",
+    "foreground": "#202321",
+    "primary": "#35624d",
+    "muted": "#6e746f",
+    "card": "#ffffff"
+  },
+  "radius": "0.625rem",
+  "animation": true
+}
+```
+
+Choose a foreground and background with sufficient contrast. Define `primary-foreground` when you use a light primary color.
+
+## Keyboard navigation
+
+Tab moves through the navigation and controls. Arrow keys switch view choices and move through search results. Enter opens the selected result, and Escape closes dialogs.
+
+The **Skip to content** link appears when focused. The sidebar separator can be adjusted with the keyboard.
+
+## Smaller screens
+
+Navigation opens in a focus-managed sheet on phones. The reader keeps its comfortable line length; tables and code blocks scroll within the content instead of stretching the page.
+
+## Motion preferences
+
+Set `animation: false` to reduce interface motion. The workspace also respects the system's reduced-motion preference. Graph physics starts paused when reduced motion is requested.
+
+## Presentations
+
+Each deck owns its keyboard focus. Focus a presentation before using arrow keys. Two open decks keep their slide position and listeners independent.
+
+Try [Demo deck](../presentations/demo-deck.mdx) and [A second perspective](../presentations/second-deck.mdx) together in the graph.
+

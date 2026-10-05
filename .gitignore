@@ -1,0 +1,13 @@
+node_modules/
+dist/
+package-dist/
+*.tgz
+test-results/
+playwright-report/
+.performance-fixture/
+.package-smoke/
+.node26.exe
+handoff/
+*.zip
+.tmp-*
+

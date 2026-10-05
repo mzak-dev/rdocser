@@ -1,0 +1,43 @@
+---
+title: Architecture
+description: Clear boundaries between content, domain logic, and the reading experience.
+group: Guides
+order: 10
+relations:
+  - target: presentations/demo-deck
+    kind: demonstrates
+---
+
+# Architecture
+
+Rdocser separates pure domain concepts, application services, infrastructure adapters, and a thin React runtime. That keeps authoring, build tooling, and interaction logic from becoming entangled.
+
+## Four layers
+
+| Layer | Responsibility | Examples |
+| --- | --- | --- |
+| Domain | Stable document concepts | Documents, relations, headings |
+| Application | Decisions and coordination | Search, links, routing, share state |
+| Infrastructure | External systems | Filesystem scanner, Vite integration, persistence |
+| Runtime | Browser interaction | Reader, graph cards, Reveal decks |
+
+Services and adapters are classes. UI components are functions that render state and dispatch actions.
+
+## Content pipeline
+
+The scanner walks the source directory, parses frontmatter, and reads Markdown headings and links from the syntax tree. The build adapter turns those projections into a typed manifest and lazy MDX imports.
+
+Only the selected article and the content in open graph cards are loaded. Node positions are computed in a worker, keeping the reader responsive.
+
+## Client-only runtime
+
+The application owns its shell and hash routes. Rendering happens in the browser. Production output contains an HTML entry point, CSS, document chunks, and JavaScript assets.
+
+Read the [project plan](../adr/0001-project-plan.md) and subsequent ADRs for the rationale behind individual decisions.
+
+## Connected documents
+
+Ordinary relative links and explicit frontmatter relations become graph edges. Follow [Connected knowledge](./graph.mdx) to see how the layout and shared state work.
+
+The [Demo deck](../presentations/demo-deck.mdx) presents these concepts interactively.
+

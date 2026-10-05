@@ -1,0 +1,6 @@
+{
+  "colors": { "background": "#fafaf9", "foreground": "#202321", "primary": "#35624d", "primary-foreground": "#ffffff", "muted": "#6e746f", "card": "#ffffff" },
+  "fonts": { "sans": "'Geist Variable', ui-sans-serif, system-ui, sans-serif", "mono": "ui-monospace, SFMono-Regular, Consolas, monospace" },
+  "radius": "0.625rem",
+  "animation": true
+}

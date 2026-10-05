@@ -1,0 +1,57 @@
+---
+title: Quick start
+description: From your first document to a published workspace.
+group: Getting started
+order: 2
+---
+
+# Quick start
+
+Rdocser reads your Markdown and MDX files and builds a browser-only documentation workspace.
+
+## Run the workspace
+
+Use Node.js 22.12 or newer.
+
+```bash
+npm install
+npm run dev
+```
+
+Open the address printed by the development server. Changes to document content and metadata refresh the workspace automatically.
+
+## Add a document
+
+Create a file under `docs/`. Folders become navigation collections unless you provide a group in frontmatter.
+
+```md
+---
+title: Your first guide
+group: Getting started
+order: 3
+---
+
+# Your first guide
+
+Write something worth discovering.
+```
+
+Read [Authoring documents](./authoring.mdx) for links, code blocks, and interactive examples.
+
+## Build and preview
+
+```bash
+npm run build
+npm run serve
+```
+
+The build produces static assets in `dist/`. Routing stays in the URL hash, so article links survive refreshes on GitHub Pages.
+
+## Customize your space
+
+Change the colors, font family, radius, or animation preference in `theme.json`. See [Theme and accessibility](./theme.mdx).
+
+## Where to go next
+
+Explore [Architecture](./architecture.mdx) or open [Connected knowledge](./graph.mdx) to learn how the document map works.
+

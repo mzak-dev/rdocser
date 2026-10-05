@@ -1,0 +1,65 @@
+---
+title: Authoring documents
+description: Write Markdown, enrich it with React, and connect related ideas.
+group: Guides
+order: 11
+---
+
+# Authoring documents
+
+Use Markdown for articles and MDX when you want to include React components. Content is trusted, author-owned source code.
+
+## Frontmatter
+
+```yaml
+---
+title: A useful guide
+description: A short introduction for the document catalog.
+group: Guides
+order: 10
+type: article
+relations:
+  - target: guides/architecture
+    kind: explains
+---
+```
+
+Titles fall back to the first level-one heading, then the filename. Groups fall back to the folder path. Document identifiers include their full path relative to the source directory.
+
+Invalid types, duplicate identifiers, and missing explicit relation targets stop the build with the source filename in the error.
+
+## Relative links
+
+Link to another source file using its path:
+
+```md
+[Architecture](./architecture.mdx)
+[Four layers](./architecture.mdx#four-layers)
+```
+
+The reader resolves these to hash routes. Graph cards open linked documents within the graph. Links inside code fences are examples, not graph connections.
+
+## Interactive React
+
+Import a component into MDX, or export a small component directly from the document. Its state belongs to that mounted document instance. Dragging and resizing an open card preserves it.
+
+The [Welcome](../welcome.mdx) article includes an interactive counter.
+
+## Presentations
+
+Set `type: presentation` and use `Deck`, `Slide`, `Stack`, and `Fragment` in MDX. Rdocser provides those components automatically.
+
+```mdx
+<Deck>
+  <Slide>
+    <h1>An idea worth sharing</h1>
+  </Slide>
+  <Slide>
+    <h2>One step at a time</h2>
+    <Fragment><p>Reveal the next thought.</p></Fragment>
+  </Slide>
+</Deck>
+```
+
+Try the [Demo deck](../presentations/demo-deck.mdx).
+

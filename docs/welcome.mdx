@@ -1,0 +1,43 @@
+---
+title: Welcome
+description: A home for your project's ideas, decisions, and discoveries.
+group: Getting started
+order: 1
+---
+
+import { useState } from "react";
+import { Button } from "../src/components/ui/button";
+
+export function ReadingCounter() {
+  const [count, setCount] = useState(0);
+  return <div className="interactive-example"><Button variant="outline" onClick={() => setCount(value => value + 1)}>Try an interaction</Button><span aria-live="polite">Clicked {count} times</span></div>;
+}
+
+# Welcome
+
+Good documentation gives you a place to start and a path to follow. Rdocser brings your articles, architectural decisions, and presentations together in one connected workspace.
+
+## Choose your path
+
+**Read** gives you a familiar documentation layout. Choose a topic from the sidebar, use the table of contents, and move between pages at your own pace.
+
+**Explore** opens a map of your documentation. Follow the connections, move cards around, and read several documents side by side.
+
+> Start with [Quick start](./guides/quick-start.mdx), or learn how the pieces fit together in [Architecture](./guides/architecture.mdx).
+
+## More than words on a page
+
+MDX lets you put working React components alongside your explanations. This example holds its own state—try it in an open graph card, then move or resize the card.
+
+<ReadingCounter />
+
+## Find what you need
+
+Press **Ctrl K** (or **⌘ K** on a Mac) to search. Titles, collections, headings, and document text are all included. Select a result with the arrow keys and Enter.
+
+## Keep exploring
+
+- [Authoring documents](./guides/authoring.mdx) explains frontmatter, links, and interactive content.
+- [Connected knowledge](./guides/graph.mdx) covers physics, cards, and sharing.
+- [Demo deck](./presentations/demo-deck.mdx) is a working Reveal.js presentation.
+

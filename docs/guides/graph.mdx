@@ -1,0 +1,44 @@
+---
+title: Connected knowledge
+description: Read side by side, discover relations, and share your train of thought.
+group: Guides
+order: 12
+---
+
+# Connected knowledge
+
+Graph view maps the connections between your documents. Each card represents an article or presentation; each line represents a link or explicit relation.
+
+## Navigate the map
+
+- Drag the background to pan.
+- Scroll to zoom, or use the zoom controls.
+- Drag a card by its header to move it.
+- Select **Fit graph to view** to bring the whole map into focus.
+
+## Read side by side
+
+Expand a card to load its actual MDX content. You can keep up to five cards open at once and resize each card from its edges.
+
+Moving and resizing an open card preserves React component state. Opening a card makes room by gently pushing nearby rectangles away. Closing it lets those neighbors return toward their resting positions. Related documents attract one another, while collision spacing keeps the map readable.
+
+## Take an article with you
+
+Choose **Pop out** on any card to collapse it and continue reading in an independent panel on the canvas. Drag the panel header to place it anywhere on the map, or focus it and use the arrow keys. The panel stays at its chosen graph coordinates, moves and scales with the canvas camera, and is unaffected by graph physics. Resize it from the bottom-right handle. **Return to card** puts the same article back in its card while preserving its reading position and interactive state.
+
+## Physics
+
+The layout runs in a Web Worker. Related cards are pulled toward one another, rectangular collisions push overlapping cards apart, and damped attraction brings cards back toward their resting positions. **Pause physics** freezes the simulation; **Resume physics** lets it continue. Dragging sets a new resting position instead of disabling the physics.
+
+Use **Reset graph layout** to release dragged positions. Reduced-motion preferences start the map with physics paused.
+
+## Share a view
+
+**Share graph** copies a link containing open documents, card sizes, current positions, resting positions, and the camera. Detached canvas panels stay local to the current session and are not included in shared links.
+
+Your last graph view is also remembered locally when browser storage is available.
+
+## Follow a connection
+
+Try [Architecture](./architecture.mdx) alongside the [Demo deck](../presentations/demo-deck.mdx). Then open [Welcome](../welcome.mdx) and try its counter while moving the card.
+

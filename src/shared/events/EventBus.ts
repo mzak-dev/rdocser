@@ -1,0 +1,2 @@
+/** Tiny typed event bus for decoupled runtime services. */
+export class EventBus<T extends Record<string,unknown>> { private listeners=new Map<keyof T,Set<(value:T[keyof T])=>void>>(); on<K extends keyof T>(key:K,fn:(value:T[K])=>void){const set=this.listeners.get(key)??new Set();set.add(fn as never);this.listeners.set(key,set);return()=>set.delete(fn as never);} emit<K extends keyof T>(key:K,value:T[K]){this.listeners.get(key)?.forEach(fn=>fn(value));} }
