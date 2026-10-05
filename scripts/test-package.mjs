@@ -13,7 +13,7 @@ const run = (args, cwd) => {
   if (result.status !== 0) throw new Error(result.error?.message ?? result.stderr + result.stdout);
   return result.stdout;
 };
-const packed = JSON.parse(run([npm, "pack", "--json"], repository))[0];
+const packed = JSON.parse(run([npm, "pack", "--json", "--silent"], repository))[0];
 const root = await mkdtemp(path.join(tmpdir(), "rdocser-package-"));
 try {
   await writeFile(path.join(root, "package.json"), JSON.stringify({ name: "rdocser-consumer", private: true, type: "module" }));
